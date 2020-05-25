@@ -1,5 +1,6 @@
 package io.tristanlarsin.toaster
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
@@ -12,6 +13,7 @@ class ToasterExample : AppCompatActivity() {
         btn_bottom.setOnClickListener {
             Toaster(this)
                 .setTextSize(12f)
+                .setTextColor(R.color.colorPrimary)
                 .setBackgroundColor(R.color.colorAccent)
                 .setTextPadding(40)
                 .setRadius(50)
@@ -24,6 +26,7 @@ class ToasterExample : AppCompatActivity() {
                 .setTextSize(20f)
                 .align(Toaster.ALIGN_TOP, 0, 200)
                 .setTextColor(R.color.white)
+                .setElevation(10)
                 .setLength(Toaster.LENGTH_LONG)
                 .show("Top Toast")
         }

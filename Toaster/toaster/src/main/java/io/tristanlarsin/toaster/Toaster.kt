@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
+import androidx.annotation.ColorRes
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.core.view.setPadding
@@ -21,12 +22,14 @@ class Toaster(private val context: Context) {
 
     private var length = LENGTH_SHORT
     private var typeFace = Typeface.DEFAULT
-    private var textColor = Color.WHITE
+    @ColorRes
+    private var textColor = R.color.white
     private var textSize = 16f
     private var textPadding = 10
 
     private var cardElevation = 8
-    private var cardBackgroundColor = Color.BLACK
+    @ColorRes
+    private var cardBackgroundColor : Int = R.color.black
     private var cardRadius = 8
 
     private val inflater by lazy {
@@ -55,7 +58,7 @@ class Toaster(private val context: Context) {
 
     // Set Text Color
     fun setTextColor(color: Int) : Toaster {
-        textColor = ContextCompat.getColor(context, color)
+        textColor = color
         return this
     }
 
@@ -66,7 +69,7 @@ class Toaster(private val context: Context) {
     }
 
     // Set background color
-    fun setBackgroundColor(color: Int) : Toaster {
+    fun setBackgroundColor(@ColorRes color: Int) : Toaster {
         cardBackgroundColor = color
         return this
     }
@@ -99,9 +102,9 @@ class Toaster(private val context: Context) {
         textView.setPadding(textPadding)
         textView.textSize = textSize
         textView.typeface = typeFace
-        textView.setTextColor(textColor)
+        textView.setTextColor(ContextCompat.getColor(context, textColor))
 
-        cardView.setCardBackgroundColor(cardBackgroundColor)
+        cardView.setCardBackgroundColor(ContextCompat.getColor(context, cardBackgroundColor))
         cardView.radius = cardRadius.toFloat()
         cardView.cardElevation = cardElevation.toFloat()
 
