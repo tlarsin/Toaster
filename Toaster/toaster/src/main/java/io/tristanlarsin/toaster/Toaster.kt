@@ -22,14 +22,16 @@ class Toaster(private val context: Context) {
 
     private var length = LENGTH_SHORT
     private var typeFace = Typeface.DEFAULT
+
     @ColorRes
     private var textColor = R.color.white
     private var textSize = 16f
     private var textPadding = 10
 
     private var cardElevation = 8
+
     @ColorRes
-    private var cardBackgroundColor : Int = R.color.black
+    private var cardBackgroundColor: Int = R.color.black
     private var cardRadius = 8
 
     private val inflater by lazy {
@@ -48,51 +50,52 @@ class Toaster(private val context: Context) {
         toastView.findViewById<TextView>(R.id.tv_message).text = message
         setParams()
         toast.show()
+        resetParams()
     }
 
     // Set text size
-    fun setTextSize(size: Float) : Toaster {
+    fun setTextSize(size: Float): Toaster {
         textSize = size
         return this
     }
 
     // Set Text Color
-    fun setTextColor(color: Int) : Toaster {
+    fun setTextColor(color: Int): Toaster {
         textColor = color
         return this
     }
 
     // Set Text Padding
-    fun setTextPadding(padding: Int) : Toaster {
+    fun setTextPadding(padding: Int): Toaster {
         textPadding = padding
         return this
     }
 
     // Set background color
-    fun setBackgroundColor(@ColorRes color: Int) : Toaster {
+    fun setBackgroundColor(@ColorRes color: Int): Toaster {
         cardBackgroundColor = color
         return this
     }
 
     // Set radius
-    fun setRadius(radius: Int) : Toaster {
+    fun setRadius(radius: Int): Toaster {
         cardRadius = radius
         return this
     }
 
-    fun setElevation(elevation: Int) : Toaster {
+    fun setElevation(elevation: Int): Toaster {
         cardElevation = elevation
         return this
     }
 
     // Align Toast
-    fun align(value: Int, horizontalOffset: Int = 0, verticalOffset: Int = 0) : Toaster {
+    fun align(value: Int, horizontalOffset: Int = 0, verticalOffset: Int = 0): Toaster {
         toast.setGravity(value, horizontalOffset, verticalOffset)
         return this
     }
 
     // Set Toast Duration
-    fun setLength(length: Int) : Toaster {
+    fun setLength(length: Int): Toaster {
         this.length = length
         return this
     }
@@ -109,6 +112,19 @@ class Toaster(private val context: Context) {
         cardView.cardElevation = cardElevation.toFloat()
 
         toast.duration = length
+    }
+
+    // Reset Params
+    private fun resetParams() {
+        length = LENGTH_SHORT
+        typeFace = Typeface.DEFAULT
+        textColor = R.color.white
+        textSize = 16f
+        textPadding = 10
+
+        cardElevation = 8
+        cardBackgroundColor = R.color.black
+        cardRadius = 8
     }
 
     private val toastView = toast.view
