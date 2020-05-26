@@ -164,15 +164,21 @@ class Toaster(private val context: Context) {
         // Toast duration
         const val LENGTH_SHORT = Toast.LENGTH_SHORT
         const val LENGTH_LONG = Toast.LENGTH_LONG
+
+        // Layout Params
         const val MATCH_PARENT = ViewGroup.LayoutParams.MATCH_PARENT
         const val WRAP_PARENT = ViewGroup.LayoutParams.WRAP_CONTENT
 
-        // TODO (Tristan) - Finish rest of Gravity options
         // Toast position
         const val ALIGN_TOP = Gravity.TOP
         const val ALIGN_BOTTOM = Gravity.BOTTOM
         const val ALIGN_START = Gravity.START
         const val ALIGN_END = Gravity.END
         const val CENTER = Gravity.CENTER
+        const val CENTER_VERTICAL = Gravity.CENTER_VERTICAL
+        const val CENTER_HORIZONTAL = Gravity.CENTER_HORIZONTAL
+        const val FILL = Gravity.FILL
+        const val FILL_HORIZONTAL = Gravity.FILL_HORIZONTAL
+        const val FILL_VERTICAL = Gravity.FILL_VERTICAL
     }
 }
