@@ -12,6 +12,8 @@ class ToasterExample : AppCompatActivity() {
         btn_bottom.setOnClickListener {
             Toaster(this)
                 .setTextSize(12f)
+                .setDimensions(Toaster.MATCH_PARENT, 200)
+                .setTextAlignment(Toaster.CENTER)
                 .setTextColor(R.color.colorPrimary)
                 .setBackgroundColor(R.color.colorAccent)
                 .setTextPadding(40)
