@@ -23,7 +23,7 @@ allprojects {
 ```
 dependencies {
 	     ...
-	     implementation 'com.github.tlarsin:Toaster:0.3'
+	     implementation 'com.github.tlarsin:Toaster:0.4'
 }
 	
 ```
