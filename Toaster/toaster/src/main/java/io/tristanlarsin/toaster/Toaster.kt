@@ -86,6 +86,11 @@ class Toaster(private val context: Context) {
         return this
     }
 
+    fun setTypeFace(typeface: Typeface) : Toaster {
+        typeFace = typeface
+        return this
+    }
+
     // Set background color
     fun setBackgroundColor(@ColorRes color: Int): Toaster {
         cardBackgroundColor = color

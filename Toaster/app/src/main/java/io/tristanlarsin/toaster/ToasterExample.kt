@@ -1,5 +1,6 @@
 package io.tristanlarsin.toaster
 
+import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
@@ -13,9 +14,9 @@ class ToasterExample : AppCompatActivity() {
             Toaster(this)
                 .setTextSize(12f)
                 .setDimensions(Toaster.MATCH_PARENT, 200)
-                .setTextAlignment(Toaster.CENTER)
-                .setTextColor(R.color.colorPrimary)
-                .setBackgroundColor(R.color.colorAccent)
+                .setTextColor(R.color.black)
+                .setBackgroundColor(R.color.white)
+                .setTypeFace(Typeface.DEFAULT_BOLD)
                 .setTextPadding(40)
                 .setRadius(50)
                 .setLength(Toaster.LENGTH_SHORT)
