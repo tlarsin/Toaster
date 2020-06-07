@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Toaster</string>
+    <string name="bottom_toast">Bottom Toast</string>
 </resources>

@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.*
 import android.widget.FrameLayout.LayoutParams.WRAP_CONTENT
 import androidx.annotation.ColorRes
+import androidx.annotation.StringRes
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.core.view.setPadding
@@ -51,7 +52,14 @@ class Toaster(private val context: Context) {
     }
 
     fun show(message: String) {
-        toastView.findViewById<TextView>(R.id.tv_message).text = message
+        textView.text = message
+        setParams()
+        toast.show()
+        resetParams()
+    }
+
+    fun show(@StringRes msgResId: Int) {
+        textView.setText(msgResId)
         setParams()
         toast.show()
         resetParams()

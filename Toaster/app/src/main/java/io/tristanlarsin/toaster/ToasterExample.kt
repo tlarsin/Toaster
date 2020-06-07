@@ -20,7 +20,7 @@ class ToasterExample : AppCompatActivity() {
                 .setTextPadding(40)
                 .setRadius(50)
                 .setLength(Toaster.LENGTH_SHORT)
-                .show("Bottom Toast")
+                .show(R.string.bottom_toast)
         }
 
         btn_top.setOnClickListener {
